@@ -12,6 +12,7 @@ Uses:
 - ExpressJS
 - AngularJS
 
+On GitHub at: https://github.com/mjm3853/brackets
 Hosted at: http://bracketsapp-20394.onmodulus.net/#/draw
 
 May require NodeJS installed locally to run correctly.
