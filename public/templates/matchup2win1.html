@@ -1,0 +1,9 @@
+<p>Champion:</p>
+	<br>
+	<select class="form-control" required="" ng-model="create.b1">
+	    <option ng-value="create.a1">{{create.a1}}</option>
+	    <option ng-value="create.a2">{{create.a2}}</option>
+	</select>
+	<br>
+<button class="btn btn-md btn-primary" ng-disabled="form3.$invalid || disableSave == 'true'" ng-click="saveBracket(create)">Save</button>
+<button class="btn btn-md btn-primary" ng-disabled="form3.$pristine" ng-click="reset()">Reset</button>

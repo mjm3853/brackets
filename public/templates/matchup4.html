@@ -1,0 +1,26 @@
+<p>Matchup 1:</p>
+	<br>
+	<div class="input-group">
+	<span class="input-group-addon glyphicon glyphicon-user"></span>
+	<input class="form-control" autofocus="" required="" placeholder="Item 1" ng-model="create.a1" >
+	</div>
+	<br>
+	<div class="input-group">
+	<span class="input-group-addon glyphicon glyphicon-user"></span>
+	<input class="form-control" autofocus="" required="" placeholder="Item 2" ng-model="create.a2" >
+	</div>
+	<br>
+<p>Matchup 2:</p>
+	<br>
+	<div class="input-group">
+	<span class="input-group-addon glyphicon glyphicon-user"></span>
+	<input class="form-control" autofocus="" required="" placeholder="Item 3" ng-model="create.a3" >
+	</div>
+	<br>
+	<div class="input-group">
+	<span class="input-group-addon glyphicon glyphicon-user"></span>
+	<input class="form-control" autofocus="" required="" placeholder="Item 4" ng-model="create.a4" >
+	</div>
+	<br>
+<button class="btn btn-md btn-primary" ng-disabled="form2.$invalid" ng-click="firstWinners(create.items)">Winners!</button>
+<button class="btn btn-md btn-primary" ng-disabled="form2.$pristine" ng-click="reset()">Reset</button>

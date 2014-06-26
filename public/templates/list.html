@@ -1,0 +1,29 @@
+<div class="container" role="main">
+	<div class="page-header">
+		<h1>List of {{brackets.length}} Brackets</h1>
+	</div>
+		<!--
+			 Uses the Angular repeat to display all brackets.
+			 These brackets have been retrieved from MongoDB using a call to the RESTapi
+		-->
+		<div class="row" ng-repeat="bracket in brackets">
+  				<p><strong>Username: </strong>{{bracket.userName}}</p>
+  				<p><strong>Bracket Name: </strong>{{bracket.bracketName}}</p>
+  				<p><strong>Bracket Description: </strong>{{bracket.bracketDesc}}</p>
+  				<p><strong>Items: </strong>{{bracket.items}}</p>
+  				<!-- the angular if will check how many items are in each bracket and display the correct template -->
+  				<div ng-if="bracket.items==2">
+  					<ng-include src="'/templates/bracket2.html'"></ng-include>
+  				</div>
+				<div ng-if="bracket.items==4">
+  					<ng-include src="'/templates/bracket4.html'"></ng-include>
+  				</div>
+  				<div ng-if="bracket.items==8">
+  					<ng-include src="'/templates/bracket8.html'"></ng-include>
+  				</div>
+  				<br>
+ 				<!-- gives the option to delete a particular bracket -->
+  				<button class="btn btn-md btn-primary" ng-click="deleteBracket(bracket._id)">Delete</button>
+  			<hr>
+		</div>
+	</div>

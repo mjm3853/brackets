@@ -1,0 +1,118 @@
+<div class="container" role="main">
+	<br>
+	<div class="row">
+	<!-- Step 1 -->
+	<div ng-show="step == 1" class="col-md-4">
+		<form id="form" name="form" role="form">
+			<!-- Displays a header and inputs for creating a bracket -->
+			<h3>Create Your Bracket</h3>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"></span>
+				<input class="form-control" autofocus="" required="" placeholder="Username" ng-model="create.userName" >
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-bold"></span>
+				<input class="form-control" required="" placeholder="Bracket Name" ng-model="create.bracketName">
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-pencil"></span>
+				<input class="form-control" required="" placeholder="Bracket Description" ng-model="create.bracketDesc">
+			</div>
+			<br>
+			<!-- 
+				Dropdown input for selecting how many matchups will be included in the Bracket
+				This determines the type of bracket that will be draw and drives the inputs that are presented throughout the process
+				The type of bracket is an SVG bracket with angular tags for text.
+				The angular tags on the SVG are updated as the customer types inputs
+			 -->
+			<select class="form-control" required="" ng-model="create.items">
+			    <option value="2">One Matchup</option>
+			    <option value="4">Two Matchups</option>
+			    <option value="8">Four Matchups</option>
+			</select>
+			<br>
+			<button class="btn btn-md btn-primary" ng-disabled="form.$invalid" ng-click="draw(create.items)">Draw!</button>
+			<button class="btn btn-md btn-primary" ng-disabled="form.$pristine" ng-click="reset()">Reset</button>
+		</form>
+	</div>
+	<!-- Step 2 -->
+	<div ng-show="step == 2"  class="col-md-4">
+			<form id="form2" name="form2" role="form">
+				<h3>Round 1: Set Matchups</h3>
+				<!-- Displays different inputs based on the type of Bracket selected. -->
+				<div ng-if="drawItems == 2">
+					<ng-include src="'/templates/matchup2.html'"></ng-include>
+				</div>
+				<div ng-if="drawItems == 4">
+					<ng-include src="'/templates/matchup4.html'"></ng-include>
+				</div>
+				<div ng-if="drawItems == 8">
+					<ng-include src="'/templates/matchup8.html'"></ng-include>
+				</div>
+			</form>
+	</div>
+	<!-- Step 3 -->
+	<div ng-show="step == 3"  class="col-md-4">
+			<form id="form3" name="form3" role="form">
+				<h3>Round 2: Pick Winners</h3>
+				<!-- Displays different inputs based on the type of Bracket selected. -->
+				<div ng-if="drawItems == 2">
+					<ng-include src="'/templates/matchup2win1.html'"></ng-include>
+				</div>
+				<div ng-if="drawItems == 4">
+					<ng-include src="'/templates/matchup4win1.html'"></ng-include>
+				</div>
+				<div ng-if="drawItems == 8">
+					<ng-include src="'/templates/matchup8win1.html'"></ng-include>
+				</div>
+			</form>
+	</div>
+	<!-- Step 4 -->
+	<div ng-show="step == 4"  class="col-md-4">
+			<form id="form4" name="form4" role="form">
+				<h3>Round 3: Pick Winners</h3>
+				<!-- Displays different inputs based on the type of Bracket selected. -->
+				<div ng-if="drawItems == 4">
+					<ng-include src="'/templates/matchup4win2.html'"></ng-include>
+				</div>
+				<div ng-if="drawItems == 8">
+					<ng-include src="'/templates/matchup8win2.html'"></ng-include>
+				</div>
+			</form>
+	</div>
+	<!-- Step 5 -->
+	<div ng-show="step == 5"  class="col-md-4">
+			<form id="form5" name="form5" role="form">
+				<h3>Round 4: Pick Winners</h3>
+				<!-- Displays different inputs based on the type of Bracket selected. -->
+				<div ng-if="drawItems == 8">
+					<ng-include src="'/templates/matchup8win3.html'"></ng-include>
+				</div>
+			</form>
+	</div>
+	<!-- Displays some welcome text and a demo. Disappears when a bracket is being created -->
+	<div ng-if="!drawItems" class="col-md-8 jumbotron">
+  			<h1 class="featurette-heading">Welcome to Brackets!</h1>
+  			<h2>Get Started:</h2>
+  			<span class="lead">
+  			<ol>
+  				<li>Create Your Bracket</li>
+  				<li>Pick Your Matchups</li>
+  				<li>Pick Your Winners</li>
+  			</ol>
+  			</span>
+  			<h2>Demo:</h2>
+  			<ng-include src="'/templates/bracketDemo.html'"></ng-include>
+	</div>
+	<!-- Displays the bracket that is being created. Includes a bracket template based on the selection of the user-->
+	<div class="col-md-8">
+		<div ng-if="drawItems > 0">
+  			<h3>{{create.bracketName}} by {{create.userName}}</h3>
+  			<p>{{create.bracketDesc}}</p>
+			<ng-include src="'/templates/empty-bracket'+ drawItems +'.html'"></ng-include>
+		</div>
+	</div>
+	</div>
+</div>

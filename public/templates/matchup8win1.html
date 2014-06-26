@@ -1,0 +1,27 @@
+<p>Matchup 5:</p>
+	<br>
+	<select class="form-control" required="" ng-model="create.b1">
+	    <option ng-value="create.a1">{{create.a1}}</option>
+	    <option ng-value="create.a2">{{create.a2}}</option>
+	</select>
+	<br>
+	<select class="form-control" required="" ng-model="create.b2">
+	    <option ng-value="create.a3">{{create.a3}}</option>
+	    <option ng-value="create.a4">{{create.a4}}</option>
+	</select>
+	<br>
+<p>Matchup 6:</p>
+	<br>
+	<select class="form-control" required="" ng-model="create.b3">
+	    <option ng-value="create.a5">{{create.a5}}</option>
+	    <option ng-value="create.a6">{{create.a6}}</option>
+	</select>
+	<br>
+	<select class="form-control" required="" ng-model="create.b4">
+	    <option ng-value="create.a7">{{create.a7}}</option>
+	    <option ng-value="create.a8">{{create.a8}}</option>
+	</select>
+	<br>
+
+<button class="btn btn-md btn-primary" ng-disabled="form3.$invalid" ng-click="secondWinners(create.items)">Winners!</button>
+<button class="btn btn-md btn-primary" ng-disabled="form3.$pristine" ng-click="reset()">Reset</button>
