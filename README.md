@@ -53,6 +53,6 @@ To Run:
 - Run: "npm install"
  [Requires NodeJS]
 - Then Run: "npm start" [Should start the server on a local port]
-- In a web browser, navigate to: localhost:<port number given above>
+- In a web browser, navigate to: localhost:(port number given above)
 
 Please email me if the steps above do not work. Apologies but I have not been able to test from scratch on multiple computers.
