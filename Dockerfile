@@ -10,6 +10,7 @@ COPY . /src
 
 # Install app dependencies
 RUN cd /src; npm install
+RUN cd /src; npm install -g express-generator
 
 EXPOSE 3000
 CMD ["node", "/src/server.js"]
