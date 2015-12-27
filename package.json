@@ -8,7 +8,7 @@
 	    "jade": "*",
 	    "connect": "*",
 	    "mongoose": "*"
-    }
+    },
 	"devDependencies": {
 	        "grunt-cli": "0.1.6",
 	        "grunt": "~0.4.0",
