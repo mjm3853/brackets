@@ -1,19 +1,3 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @mjm3853
- Watch 1
-  Star 0
-  Fork 2 Shashikant86/Modern-Toolkit
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathModern-Toolkit/Gruntfile.js
-c6fbd98  on Mar 29, 2014
-@Shashikant86 Shashikant86 Added Modern Toolkit project
-1 contributor
-RawBlameHistory    Executable File  91 lines (76 sloc)  2.01 KB
 /*global module*/
 /*jshint camelcase:false*/ // because of gruntConfig.qunit_junit
 module.exports = function (grunt) {
