@@ -1,3 +1,20 @@
+module.exports = function(grunt) {
+
+  grunt.initConfig({
+    jshint: {
+      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      options: {
+        globals: {
+          jQuery: true
+        }
+      }
+    },
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint']
+    }
+  });
+
 grunt.registerTask('default', ['qunit_junit', 'qunit']);
 grunt.loadNpmTasks('grunt-contrib-qunit');
    grunt.loadNpmTasks('grunt-qunit-istanbul');
@@ -19,3 +36,6 @@ grunt.loadNpmTasks('grunt-contrib-qunit');
            dest: 'report/'
        }
    };
+
+};
+
